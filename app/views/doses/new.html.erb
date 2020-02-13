@@ -4,7 +4,7 @@
       <h1>Create a new dose</h1>
       <%= simple_form_for [@cocktail, @dose]  do |f| %>
         <%= f.input :description %>
-        <%= f.input :ingredient %>
+        <%= f.select :ingredient_id, Ingredient.all.map {|r| [r.name, r.id]} %>
         <%= f.submit class: 'btn btn-primary' %>
       <% end %>
     </div>
